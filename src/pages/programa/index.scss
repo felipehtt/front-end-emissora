@@ -3,11 +3,20 @@
     flex-direction: column;
     margin: 30px;
 
+    .top {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        padding-bottom: 22px;
+    }
+
+
     h1 {
+        padding-bottom: 18px;
         padding-top: 12px;
         padding-left: 20px;
-        padding-bottom: 27px;
     }
+
 
     ul {
         list-style: none;

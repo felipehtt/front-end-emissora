@@ -18,6 +18,7 @@ export default function Home() {
                 <ul>
                     <li><Link to='/canal'>Entrar em Canais</Link></li>
                     <li><Link to='/programa'>Entrar em Programas</Link></li>
+                    <li><Link to='/favorito'>Entrar em Programas Favoritos</Link></li>
                 </ul>
 
             </div>
