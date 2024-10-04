@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 
-export default function Cadastrar() {
+export default function CadastrarP() {
     const [nome, setNome] = useState('');
     const [telefone, setTelefone] = useState('');
     const [cep, setCep] = useState('');
@@ -38,7 +38,7 @@ export default function Cadastrar() {
         <div className='pagina-cadastrar'>
 
             <div className='top'>
-                <a className='icon' href="/"><FontAwesomeIcon icon={faArrowLeft} size='2x' /></a>
+                <a className='icon' href="/programa"><FontAwesomeIcon icon={faArrowLeft} size='2x' /></a>
 
                 <h1>CADASTRAR</h1>
             </div>

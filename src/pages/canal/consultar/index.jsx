@@ -9,7 +9,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 import axios from 'axios'
 
-export default function Consultar() {
+export default function ConsultarC() {
 
     const [listaIntencoes, setListaIntencoes] = useState([]);
     const [exibir, setExibir] = useState(false);
@@ -18,7 +18,7 @@ export default function Consultar() {
 
     async function buscar() {
 
-        const url = 'http://localhost:7000/intencao';
+        const url = 'http://localhost:7000/intencoes';
         let resp = await axios.get(url);
         setListaIntencoes(resp.data);
 
@@ -40,7 +40,7 @@ export default function Consultar() {
         <div className='pagina-consultar'>
 
             <div className='top'>
-                <a className='icon' href="/"><FontAwesomeIcon icon={faArrowLeft} size='2x' /></a>
+                <a className='icon' href="/canal"><FontAwesomeIcon icon={faArrowLeft} size='2x' /></a>
 
                 <h1>CONSULTAR</h1>
             </div>
