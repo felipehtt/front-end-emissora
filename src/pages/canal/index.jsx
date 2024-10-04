@@ -9,7 +9,11 @@ export default function canal() {
 
             <div>
 
-                <h1>- Canais</h1>
+            <div className='top'>
+                <a className='icon' href="/"><FontAwesomeIcon icon={faArrowLeft} size='2x' color='#000' /></a>
+
+                <h1>CANAL</h1>
+            </div>
 
                 <h2>Canais da Tv</h2>
 
