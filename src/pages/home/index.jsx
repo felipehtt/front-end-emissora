@@ -9,15 +9,15 @@ export default function Home() {
 
             <div>
 
-                <h1>- HOME</h1>
+                <h1>- Cabine de Comando</h1>
 
-                <h2>Canais da TV</h2>
+                <h2>Controle das Emissoras</h2>
 
                 <img src="" alt="" />
 
                 <ul>
-                    <li><Link to='/consultar'>Consultar Canais</Link></li>
-                    <li><Link to='/cadastrar'>Cadastrar Canais</Link></li>
+                    <li><Link to='/canal'>Entrar em Canais</Link></li>
+                    <li><Link to='/programa'>Entrar em Programas</Link></li>
                 </ul>
 
             </div>
