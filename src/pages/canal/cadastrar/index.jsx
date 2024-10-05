@@ -8,7 +8,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 export default function CadastrarC() {
     const [nome, setNome] = useState('');
-    const [numero, setNumero] = useState(0);
+    const [numero, setNumero] = useState('');
     const [aberto, setAberto] = useState(false);
 
 
