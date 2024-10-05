@@ -40,8 +40,8 @@ export default function ConsultarF() {
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Id do Programa</th>
-                        <th>Id do Usuário</th>
+                        <th>Programa</th>
+                        <th>Usuário</th>
                         <th>Avaliação</th>
                     </tr>
                 </thead>
@@ -53,8 +53,8 @@ export default function ConsultarF() {
                         {listaFavoritos.map(item =>
                             <tr>
                                 <td>{item.idProgramaFavorito}</td>
-                                <td>{item.idUsuario}</td>
-                                <td>{item.idCanalPrograma}</td>
+                                <td>{item.usuario}</td>
+                                <td>{item.canalPrograma}</td>
                                 <td>{`${item.avaliacao}.0`}</td>
                                 <td><Link to={`/alterar/${item.idProgramaFavorito}`}><FontAwesomeIcon icon={faPenToSquare} /></Link></td>
                             </tr>

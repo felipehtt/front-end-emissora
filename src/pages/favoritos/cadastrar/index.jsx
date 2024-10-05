@@ -7,17 +7,16 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function CadastrarF() {
-    const [idUsuario, setIdUsuario] = useState('');
-    const [idCanalPrograma, setIdCanalPrograma] = useState('');
+    const [usuario, setUsuario] = useState('');
+    const [canalPrograma, setCanalPrograma] = useState('');
     const [avaliacao, setAvaliacao] = useState('');
 
     async function salvar() {
 
         const paramCorpo = {
-            "idUsuario": idUsuario,
-            "idCanalPrograma": idCanalPrograma,
-            "avaliacao": avaliacao,
-
+            "usuario": usuario,
+            "canalPrograma": canalPrograma,
+            "avaliacao": avaliacao
         }
 
         const url = 'http://localhost:7000/programaFavorito';
@@ -39,11 +38,11 @@ export default function CadastrarF() {
             <div className='form'>
                 <div>
                     <label>Usúario Id:</label>
-                    <input type='text' placeholder='2' value={idUsuario} onChange={e => setIdUsuario(e.target.value)} />
+                    <input type='text' placeholder='2' value={usuario} onChange={e => setUsuario(e.target.value)} />
                 </div>
                 <div>
                     <label>Programa Id:</label>
-                    <input type='text' placeholder='2' value={idCanalPrograma} onChange={e => setIdCanalPrograma(e.target.value)} />
+                    <input type='text' placeholder='2' value={canalPrograma} onChange={e => setCanalPrograma(e.target.value)} />
                 </div>
                 <div>
                     <label>Avaliação:</label>
