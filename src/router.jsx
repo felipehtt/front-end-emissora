@@ -13,7 +13,7 @@ import CadastrarF from './pages/favoritos/cadastrar';
 import ConsultarF from './pages/favoritos/consultar';
 import CadastrarU from './pages/usuarios/cadastrar';
 import ConsultarU from './pages/usuarios/consultar';
-import Alterar from './pages/canal/alterar';
+import AlterarC from './pages/canal/alterar';
 
 export default function Navegacao() {
 
@@ -28,13 +28,13 @@ export default function Navegacao() {
         <Route path='/usuarios' element={<Usuarios />} />
         <Route path='/canal/consultar' element={<ConsultarC />} />
         <Route path='/canal/cadastrar' element={<CadastrarC />} />
+        <Route path='/alterar/:id' element={<AlterarC />} />
         <Route path='/programa/consultar' element={<ConsultarP />} />
         <Route path='/programa/cadastrar' element={<CadastrarP />} />
         <Route path='/favoritos/consultar' element={<ConsultarF />} />
         <Route path='/favoritos/cadastrar' element={<CadastrarF />} />
         <Route path='/usuarios/consultar' element={<ConsultarU />} />
         <Route path='/usuarios/cadastrar' element={<CadastrarU />} />
-        <Route path='/alterar/:id' element={<Alterar />} />
       </Routes>
     </BrowserRouter>
 

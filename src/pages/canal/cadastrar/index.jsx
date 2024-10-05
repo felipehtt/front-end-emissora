@@ -8,29 +8,22 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 export default function CadastrarC() {
     const [nome, setNome] = useState('');
-    const [telefone, setTelefone] = useState('');
-    const [cep, setCep] = useState('');
-    const [dataFesta, setDataFesta] = useState('');
-    const [tipoFesta, setTipoFesta] = useState('');
-    const [temaFesta, setTemaFesta] = useState('');
-    const [dataIntencao, setDataIntencao] = useState('');
+    const [numero, setNumero] = useState(0);
+    const [aberto, setAberto] = useState(false);
+
 
     async function salvar() {
 
         const paramCorpo = {
             "nome": nome,
-            "telefone": telefone,
-            "cep": cep,
-            "dataFesta": dataFesta,
-            "tipoFesta": tipoFesta,
-            "temaFesta": temaFesta,
-            "dataIntencao": dataIntencao
+            "numero": numero,
+            "aberto": aberto
         }
 
-        const url = 'http://localhost:7000/intencao';
+        const url = 'http://localhost:7000/canal';
         let resp = await axios.post(url, paramCorpo);
 
-        alert('Pessoa adicionada na Intenções. Id: ' + resp.data.idIntencao);
+        alert('Canal Adicionado. Id: ' + resp.data.idCanal);
 
     }
 
@@ -40,37 +33,21 @@ export default function CadastrarC() {
             <div className='top'>
                 <a className='icon' href="/canal"><FontAwesomeIcon icon={faArrowLeft} size='2x' /></a>
 
-                <h1>CADASTRAR</h1>
+                <h1>CADASTRAR CANAL</h1>
             </div>
 
             <div className='form'>
                 <div>
                     <label>Nome:</label>
-                    <input type='text' placeholder='Felipe Soares' value={nome} onChange={e => setNome(e.target.value)} />
+                    <input type='text' placeholder='Rede Globo' value={nome} onChange={e => setNome(e.target.value)} />
                 </div>
                 <div>
-                    <label>Telefone:</label>
-                    <input type='text' placeholder='(11)12345-1234' value={telefone} onChange={e => setTelefone(e.target.value)} />
+                    <label>N° Canal:</label>
+                    <input type='text' placeholder='5' value={numero} onChange={e => setNumero(e.target.value)} />
                 </div>
                 <div>
-                    <label>CEP:</label>
-                    <input type='text' placeholder='12345-123' value={cep} onChange={e => setCep(e.target.value)} />
-                </div>
-                <div>
-                    <label>Data da Festa:</label>
-                    <input type='text' placeholder='05/05/2024' value={dataFesta} onChange={e => setDataFesta(e.target.value)} />
-                </div>
-                <div>
-                    <label>Tipo da Festa:</label>
-                    <input type='text' placeholder='Casamento' value={tipoFesta} onChange={e => setTipoFesta(e.target.value)} />
-                </div>
-                <div>
-                    <label>Tema da Festa:</label>
-                    <input type='text' placeholder='Heróis' value={temaFesta} onChange={e => setTemaFesta(e.target.value)} />
-                </div>
-                <div>
-                    <label>Data Intenção</label>
-                    <input type='text' placeholder='Aniversariante faz 13 anos' value={dataIntencao} onChange={e => setDataIntencao(e.target.value)} />
+                    <label>Canal Aberto:</label>
+                    <input type='checkbox'  checked={aberto} onChange={e => setAberto(e.target.checked)} />
                 </div>
             </div>
             <button onClick={salvar}> SALVAR </button>
