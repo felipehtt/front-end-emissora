@@ -16,11 +16,10 @@ export default function Favoritos() {
                     <a className='icon' href="/"><FontAwesomeIcon icon={faArrowLeft} size='2x' color='#000' /></a>
 
                     <h1>Programas Favoritos</h1>
+                    
                 </div>
 
                 <h2>Programas Favoritos dos Canais</h2>
-
-                <img src="" alt="" />
 
                 <ul>
                     <li><Link to='/favoritos/consultar'>Consultar Programas Favoritos</Link></li>

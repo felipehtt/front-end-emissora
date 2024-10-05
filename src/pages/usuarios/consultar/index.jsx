@@ -11,28 +11,17 @@ import axios from 'axios'
 
 export default function ConsultarU() {
 
-    const [listaIntencoes, setListaIntencoes] = useState([]);
+    const [listaUsuarios, setListaUsuarios] = useState([]);
     const [exibir, setExibir] = useState(false);
-
-    const { id } = useParams();
 
     async function buscar() {
 
-        const url = 'http://localhost:7000/intencao';
+        const url = 'http://localhost:7000/usuario';
         let resp = await axios.get(url);
-        setListaIntencoes(resp.data);
+        setListaUsuarios(resp.data);
 
         setExibir(!exibir);
 
-
-    }
-
-    async function deletar() {
-
-        const url = `http://localhost:7000/intencao/${id}`;
-        let resp = await axios.delete(url);
-
-        setListaIntencoes(resp.data);
 
     }
 
@@ -51,13 +40,7 @@ export default function ConsultarU() {
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Nome</th>
-                        <th>Telefone</th>
-                        <th>CEP</th>
-                        <th>Data da Festa</th>
-                        <th>Tipo da Festa</th>
-                        <th>Tema da Festa</th>
-                        <th>Data da Intenção</th>
+                        <th>Nome do Usuário</th>
                     </tr>
                 </thead>
 
@@ -65,18 +48,11 @@ export default function ConsultarU() {
                     
                     <tbody>
     
-                        {listaIntencoes.map(item =>
+                        {listaUsuarios.map(item =>
                             <tr>
-                                <td>{item.idIntencao}</td>
+                                <td>{item.idUsuario}</td>
                                 <td>{item.nome}</td>
-                                <td>{item.telefone}</td>
-                                <td>{item.cep}</td>
-                                <td>{new Date(item.dataFesta).toLocaleDateString()}</td>
-                                <td>{item.tipoFesta}</td>
-                                <td>{item.temaFesta}</td>
-                                <td>{new Date (item.dataIntencao).toLocaleDateString()}</td>
-                                <td><Link to={`/alterar/${item.idIntencao}`}><FontAwesomeIcon icon={faPenToSquare} /></Link></td>
-                                <td><FontAwesomeIcon icon={faTrash} onClick={deletar} /></td>
+                                <td><Link to={`/alterar/${item.idUsuario}`}><FontAwesomeIcon icon={faPenToSquare} /></Link></td>
                             </tr>
                         )}
                     </tbody>

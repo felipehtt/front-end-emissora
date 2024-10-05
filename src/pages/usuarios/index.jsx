@@ -19,8 +19,6 @@ export default function Usuarios() {
 
                 <h2>Usuarios que Assistem a Tv</h2>
 
-                <img src="" alt="" />
-
                 <ul>
                     <li><Link to='/usuarios/consultar'>Consultar Usuarios</Link></li>
                     <li><Link to='/usuarios/cadastrar'>Cadastrar Usuarios</Link></li>
