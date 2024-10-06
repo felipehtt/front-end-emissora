@@ -32,9 +32,12 @@ export default function AlterarC() {
 
     async function buscar() {
 
-        const url = `http://localhost:7000/intencao/${id}`;
+        const url = `http://localhost:7000/canal/${id}`;
         let resp = await axios.get(url);
         
+        setNome(resp.data.nome);
+        setNumero(resp.data.numero);
+        setAberto(resp.data.aberto);
 
     }
 
@@ -49,7 +52,7 @@ export default function AlterarC() {
         <div className='pagina-alterar'>
 
             <div className='top'>
-                <a className='icon' href="/consultar"><FontAwesomeIcon icon={faArrowLeft} size='2x' /></a>
+                <a className='icon' href="/canal"><FontAwesomeIcon icon={faArrowLeft} size='2x' /></a>
 
                 <h1>ALTERAR CANAL</h1>
             </div>
@@ -67,11 +70,11 @@ export default function AlterarC() {
                 </div>
                 <div>
                     <label>Canal Aberto:</label>
-                    <input type='cackbox' checked={aberto} onChange={e => setAberto(e.target.checked)} />
+                    <input type='checkbox' checked={aberto} onChange={e => setAberto(e.target.checked)} />
                 </div>
 
             </div>
-            <Link to='/consultar'><button onClick={alterar}> ALTERAR </button></Link>
+            <Link to='/canal/consultar'><button onClick={alterar}> ALTERAR </button></Link>
 
         </div>
 

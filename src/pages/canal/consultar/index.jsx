@@ -56,7 +56,7 @@ export default function ConsultarC() {
                                 <td>{item.nome}</td>
                                 <td>{item.numero}</td>
                                 <td>{item.aberto == true ? 'Sim' : 'Não'}</td>
-                                <td><Link to={`/alterar/${item.idCanal}`}><FontAwesomeIcon icon={faPenToSquare} /></Link></td>
+                                <td><Link to={`/canal/alterar/${item.idCanal}`}><FontAwesomeIcon icon={faPenToSquare} /></Link></td>
                             </tr>
                         )}
                     </tbody>

@@ -7,50 +7,40 @@ import { Link } from 'react-router-dom';
 
 import axios from 'axios';
 
-export default function Alterar() {
+export default function AlterarF() {
 
-    const [nome, setNome] = useState('');
-    const [telefone, setTelefone] = useState('');
-    const [cep, setCep] = useState('');
-    const [dataFesta, setDataFesta] = useState('');
-    const [tipoFesta, setTipoFesta] = useState('');
-    const [temaFesta, setTemaFesta] = useState('');
-    const [dataIntencao, setDataIntencao] = useState('');
+    const [usuario, setUsuario] = useState('');
+    const [programa, setPrograma] = useState('');
+    const [avaliacao, setAvaliacao] = useState('');
 
     const { id } = useParams();
 
     async function alterar() {
 
         const paramCorpo = {
-            "nome": nome,
-            "telefone": telefone,
-            "cep": cep,
-            "dataFesta": dataFesta,
-            "tipoFesta": tipoFesta,
-            "temaFesta": temaFesta,
-            "dataIntencao": dataIntencao
+
+            "usuario": usuario,
+            "canalPrograma": programa,
+            "avaliacao": avaliacao
+
         }
 
-        const url = `http://localhost:7000/intencao/${id}`;
+        const url = `http://localhost:7000/programaFavorito/${id}`;
         let resp = await axios.put(url, paramCorpo);
 
-        alert(`Intenção Alterada.`);
+        alert(`Programa Favorito Alterado.`);
 
 
     }
 
     async function buscar() {
 
-        const url = `http://localhost:7000/intencao/${id}`;
+        const url = `http://localhost:7000/join/programaFavorito/${id}`;
         let resp = await axios.get(url);
 
-        setNome(resp.data.nome);
-        setTelefone(resp.data.telefone);
-        setCep(resp.data.cep);
-        setDataFesta(resp.data.dataFesta);
-        setTipoFesta(resp.data.tipoFesta);
-        setTemaFesta(resp.data.temaFesta);
-        setDataIntencao(resp.data.dataIntencao);
+        setUsuario(resp.data.usuario);
+        setPrograma(resp.data.programa);
+        setAvaliacao(resp.data.avaliacao);
 
     }
 
@@ -65,44 +55,29 @@ export default function Alterar() {
         <div className='pagina-alterar'>
 
             <div className='top'>
-                <a className='icon' href="/"><FontAwesomeIcon icon={faArrowLeft} size='2x' /></a>
+                <a className='icon' href="/favoritos"><FontAwesomeIcon icon={faArrowLeft} size='2x' /></a>
 
                 <h1>ALTERAR</h1>
             </div>
 
-            <p>id Intenção: {id}</p>
+            <p>id Programa Favorito: {id}</p>
 
             <div className='form'>
                 <div>
-                    <label>Nome:</label>
-                    <input type='text' placeholder='Felipe Soares' value={nome} onChange={e => setNome(e.target.value)} />
+                    <label>Usúario Id:</label>
+                    <input type='text' placeholder='2' value={usuario} onChange={e => setUsuario(e.target.value)} />
                 </div>
                 <div>
-                    <label>Telefone:</label>
-                    <input type='text' placeholder='(11)12345-1234' value={telefone} onChange={e => setTelefone(e.target.value)} />
+                    <label>Programa Id:</label>
+                    <input type='text' placeholder='2' value={programa} onChange={e => setPrograma(e.target.value)} />
                 </div>
                 <div>
-                    <label>CEP:</label>
-                    <input type='text' placeholder='12345-123' value={cep} onChange={e => setCep(e.target.value)} />
-                </div>
-                <div>
-                    <label>Data da Festa:</label>
-                    <input type='text' placeholder='05/05/2024' value={dataFesta} onChange={e => setDataFesta(e.target.value)} />
-                </div>
-                <div>
-                    <label>Tipo da Festa:</label>
-                    <input type='text' placeholder='Casamento' value={tipoFesta} onChange={e => setTipoFesta(e.target.value)} />
-                </div>
-                <div>
-                    <label>Tema da Festa:</label>
-                    <input type='text' placeholder='Heróis' value={temaFesta} onChange={e => setTemaFesta(e.target.value)} />
-                </div>
-                <div>
-                    <label>Data Intenção:</label>
-                    <input type='text' placeholder='Data de Hoje' value={dataIntencao} onChange={e => setDataIntencao(e.target.value)} />
+                    <label>Avaliação:</label>
+                    <input type='text' placeholder='7.0' value={avaliacao} onChange={e => setAvaliacao(e.target.value)} />
                 </div>
             </div>
-            <Link to='/consultar'><button onClick={alterar}> ALTERAR </button></Link>
+
+            <Link to='/favoritos/consultar'><button onClick={alterar}> ALTERAR </button></Link>
 
         </div>
 

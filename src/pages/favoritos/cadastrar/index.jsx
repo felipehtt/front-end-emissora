@@ -8,14 +8,14 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 export default function CadastrarF() {
     const [usuario, setUsuario] = useState('');
-    const [canalPrograma, setCanalPrograma] = useState('');
+    const [programa, setPrograma] = useState('');
     const [avaliacao, setAvaliacao] = useState('');
 
     async function salvar() {
 
         const paramCorpo = {
             "usuario": usuario,
-            "canalPrograma": canalPrograma,
+            "canalPrograma": programa,
             "avaliacao": avaliacao
         }
 
@@ -42,7 +42,7 @@ export default function CadastrarF() {
                 </div>
                 <div>
                     <label>Programa Id:</label>
-                    <input type='text' placeholder='2' value={canalPrograma} onChange={e => setCanalPrograma(e.target.value)} />
+                    <input type='text' placeholder='2' value={programa} onChange={e => setPrograma(e.target.value)} />
                 </div>
                 <div>
                     <label>Avaliação:</label>

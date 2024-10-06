@@ -40,8 +40,8 @@ export default function ConsultarF() {
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Programa</th>
                         <th>Usuário</th>
+                        <th>Programa</th>
                         <th>Avaliação</th>
                     </tr>
                 </thead>
@@ -54,9 +54,9 @@ export default function ConsultarF() {
                             <tr>
                                 <td>{item.idProgramaFavorito}</td>
                                 <td>{item.usuario}</td>
-                                <td>{item.canalPrograma}</td>
+                                <td>{item.programa}</td>
                                 <td>{`${item.avaliacao}.0`}</td>
-                                <td><Link to={`/alterar/${item.idProgramaFavorito}`}><FontAwesomeIcon icon={faPenToSquare} /></Link></td>
+                                <td><Link to={`/favoritos/alterar/${item.idProgramaFavorito}`}><FontAwesomeIcon icon={faPenToSquare} /></Link></td>
                             </tr>
                         )}
                     </tbody>
