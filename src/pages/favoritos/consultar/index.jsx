@@ -14,9 +14,10 @@ export default function ConsultarF() {
     const [listaFavoritos, setListaFavoritos] = useState([]);
     const [exibir, setExibir] = useState(false);
 
+
     async function buscar() {
 
-        const url = 'http://localhost:7000/programaFavorito';
+        const url = `http://localhost:7000/programaFavorito`;
         let resp = await axios.get(url);
         setListaFavoritos(resp.data);
 
