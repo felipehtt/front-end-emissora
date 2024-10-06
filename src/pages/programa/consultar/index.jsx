@@ -40,7 +40,7 @@ export default function ConsultarP() {
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Id do canal</th>
+                        <th>Nome do canal</th>
                         <th>Programa</th>
                         <th>Genêro</th>
                         <th>Horário</th>
@@ -54,10 +54,10 @@ export default function ConsultarP() {
                         {listaProgramas.map(item =>
                             <tr>
                                 <td>{item.idCanalPrograma}</td>
-                                <td>{item.idCanal}</td>
+                                <td>{item.canal}</td>
                                 <td>{item.nome}</td>
                                 <td>{item.genero}</td>
-                                <td>{item.hora}</td>
+                                <td>{item.horario}</td>
                                 <td><Link to={`/alterar/${item.idCanalPrograma}`}><FontAwesomeIcon icon={faPenToSquare} /></Link></td>
                             </tr>
                         )}

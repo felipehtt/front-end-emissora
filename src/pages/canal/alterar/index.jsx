@@ -34,7 +34,7 @@ export default function AlterarC() {
 
         const url = `http://localhost:7000/intencao/${id}`;
         let resp = await axios.get(url);
-
+        
 
     }
 

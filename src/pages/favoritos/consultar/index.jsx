@@ -23,7 +23,6 @@ export default function ConsultarF() {
 
         setExibir(!exibir);
 
-
     }
 
     return (
